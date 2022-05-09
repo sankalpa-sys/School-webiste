@@ -3,10 +3,10 @@ import React from "react";
 
 function PricipalMessage() {
   return (
-    <main className=" md:w-[85%] pr-3 ml-auto h-auto my-14 flex md:flex-row flex-col space-x-3 space-y-6">
+    <main className=" md:w-[85%] px-3 ml-auto h-auto  my-14 flex md:flex-row flex-col md:space-x-3 space-y-6">
       <section className="md:w-[40%] w-full h-full flex flex-col space-y-3 md:px-4 px-2 ">
         <div className="w-full relative h-96">
-             <Image src="/santos.jpeg"  className="w-full" layout="fill" alt="" />
+             <Image src="https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"  className="w-full" layout="fill" alt="" />
         </div>
         <p className=" font-Roboto mt-4 first-letter:text-yellow-600 first-letter:font-bold first-letter:text-2xl">
           If there is no struggle, there is no progress. The true spirit of the
@@ -20,9 +20,9 @@ function PricipalMessage() {
         </p>
       </section>
 
-      <section className="md:w-[60%] w-full font-serif flex flex-col  space-y-4 px-4 ">
+      <section className="md:w-[60%] w-full font-serif flex flex-col  space-y-4 px-2 ">
         <h1 className="text-2xl text-indigo-600 font-bold font-Lora">Message from the Principal</h1>
-        <p className="first-letter:text-yellow-600 first-letter:font-bold first-letter:text-2xl font-Roboto">
+        <p className="first-letter:text-yellow-600  first-letter:font-bold first-letter:text-2xl font-Roboto">
           Embracing the advent of opportunities within the pandemic, we are
           striving to institutionalize innovative concepts such as flipped
           classrooms, rubric-based evaluation, and speaker’s club activities
@@ -43,7 +43,7 @@ function PricipalMessage() {
           for their constructive feedback.
         </p>
         
-       <p className="font-Cursive"> Santos Neupane </p>
+       <p className="font-Cursive">The Undertaker</p>
        <p>Principal</p>
       </section>
     </main>
