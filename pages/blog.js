@@ -7,9 +7,14 @@ import { useRouter } from "next/router";
 import SingleBlog from "./components/SingleBlog";
 import ReserveSeat from "./components/ReserveSeat";
 import Head from "next/head";
+import useSWR from 'swr'
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-function Blog({blogs}) {
+function Blog() {
   const router = useRouter()
+  const { data, error } = useSWR("http://localhost:3000/api/blog", fetcher)
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
   
   return (
     <main className="">
@@ -41,7 +46,7 @@ function Blog({blogs}) {
       </div> 
 
       <section className="px-8 py-8 grid md:grid-cols-3 grid-cols-1 md:gap-x-8 gap-y-32 md:gap-y-20">
-       {blogs.map((blog)=>(
+       {data.map((blog)=>(
           <SingleBlog key={blog._id} id={blog._id} title={blog.title} content= {blog.content} thumbnail={blog.thumbnail} author={blog.author}  createdAt={blog.createdAt} />
        ))}
 
@@ -53,14 +58,6 @@ function Blog({blogs}) {
   );
 }
 
-export async function getStaticProps() {
-  const res  = await fetch("http://localhost:3000/api/blog");
-  const blogs = await res.json();
-  return{
-    props: {
-      blogs
-    }
-  }
-}
+
 
 export default Blog;

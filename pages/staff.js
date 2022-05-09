@@ -1,15 +1,21 @@
-import axios from 'axios'
-import React, {useState, useEffect} from 'react'
+
+import React from 'react'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import BottomFooter from './components/BottomFooter'
 import Profile from './components/Profile'
 import Head from 'next/head'
+import useSWR from 'swr'
 
-function Staff({data}) {
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+function Staff() {
     
-    
+  const { data, error } = useSWR('http://localhost:3000/api/staffinfo', fetcher)
+
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
     
   return (
     <main className='bg-gradient-to-r from-pink-200 to-orange-200'>
@@ -35,14 +41,6 @@ function Staff({data}) {
   )
 }
 
-export async function getStaticProps() {
-  const res = await fetch('http://localhost:3000/api/staffinfo')
-  const data = await res.json()
-  return {
-    props: {
-      data
-    }
-  }
-}
+
 
 export default Staff

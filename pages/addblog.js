@@ -116,11 +116,11 @@ function Addblog() {
           <input
             type="text"
             placeholder="Your name"
-            className="w-full h-auto outline-none mx-2 md:mx-4 font-semibold  text-sm text-zinc-800 border-b border-slate-300  p-1"
+            className="w-full h-auto outline-none mx-2 md:mx-4  text-sm text-zinc-800 border-b border-slate-300  p-1"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <select className="w-full h-auto outline-none mx-2 md:mx-4 font-semibold  text-sm text-zinc-800 border-b border-slate-300  p-1" onChange={(e) => setPost(e.target.value)} name="post" id="post">
+          <select className="w-full h-auto outline-none mx-2 md:mx-4   text-sm text-zinc-800 border-b border-slate-300  p-1" onChange={(e) => setPost(e.target.value)} name="post" id="post">
             <option value="teacher">Teacher</option>
             <option value="student">Student</option>
           </select>
@@ -128,7 +128,7 @@ function Addblog() {
           <input
             type="number"
             placeholder="Your grade"
-            className="w-full h-auto outline-none mx-2 md:mx-4 font-semibold  text-sm text-zinc-800 border-b border-slate-300  p-1"
+            className="w-full h-auto outline-none mx-2 md:mx-4   text-sm text-zinc-800 border-b border-slate-300  p-1"
             value={grade}
             max={12}
             min={1}

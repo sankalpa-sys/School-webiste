@@ -9,7 +9,17 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import ReserveSeat from "./components/ReserveSeat";
 
-function Gallery({images}) {
+import useSWR from 'swr'
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+function Gallery() {
+    
+  const { data, error } = useSWR('http://localhost:3000/api/images', fetcher)
+
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
+
   const router = useRouter()
   const [starting, setStarting] = useState(0)
   const [end, setEnd] = useState(15)
@@ -76,7 +86,7 @@ function Gallery({images}) {
       </div>
       {/* Photos */}
       <section className={view? "screen grid grid-cols-2 md:grid-cols-3 my-4 gap-2 px-2 transition-all duration-300  opacity-30 ":"screen grid grid-cols-2 md:grid-cols-3 my-4 gap-2 px-2 transition-all duration-300 "}>
-       {images.slice(starting,end).map((image)=>(
+       {data.slice(starting,end).map((image)=>(
           <Image onClick={()=>handleImageClick(image.img)} className={view?"cursor-pointer transition-opacity duration-300 opacity-30":"cursor-pointer hover:opacity-60 transition-opacity duration-300"} key={image.id} src={image.img} layout='responsive' alt="" height={50} width={50}/>
        ))}
         
@@ -94,7 +104,7 @@ function Gallery({images}) {
             <ChevronDoubleLeftIcon className="h-8 w-8 text-blue-700  "/>
             <p className="text-sm">Previous</p>
           </div>)}
-          {end < images.length && (<div onClick={handleNextClick} className="flex  flex-col space-y-3 justify-center items-center cursor-pointer">
+          {end < data.length && (<div onClick={handleNextClick} className="flex  flex-col space-y-3 justify-center items-center cursor-pointer">
             <ChevronDoubleRightIcon className="h-8 w-8 text-blue-700 "/>
             <p className="text-sm">Next</p>
           </div>)}
@@ -106,13 +116,5 @@ function Gallery({images}) {
     </main>
   );
 }
-export async function getStaticProps(){
-  const res = await fetch('http://localhost:3000/api/images');
-  const images = await res.json();
-  return{
-    props: {
-      images: images
-    }
-  }
-}
+
 export default Gallery;
