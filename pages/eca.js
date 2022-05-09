@@ -111,7 +111,7 @@ function Eca({ecaData}) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch("http://localhost:3000/api/ecaData");
   const ecaData = await res.json();
   return{

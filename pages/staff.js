@@ -35,7 +35,7 @@ function Staff({data}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch('http://localhost:3000/api/staffinfo')
   const data = await res.json()
   return {

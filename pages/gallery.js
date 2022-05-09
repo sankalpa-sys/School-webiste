@@ -52,6 +52,7 @@ function Gallery({images}) {
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          crossOrigin="anonymous"
         />
       </Head>
       <Header />
@@ -105,7 +106,7 @@ function Gallery({images}) {
     </main>
   );
 }
-export async function getServerSideProps(){
+export async function getStaticProps(){
   const res = await fetch('http://localhost:3000/api/images');
   const images = await res.json();
   return{

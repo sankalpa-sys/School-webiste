@@ -20,6 +20,11 @@ function Blog({blogs}) {
           content="These are the blogs of our school written by our students and teachers. You can read our blogs and also reserve a seat in our school."
         />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          crossOrigin="anonymous"
+        />
        
       </Head>
       <Header />
@@ -48,7 +53,7 @@ function Blog({blogs}) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res  = await fetch("http://localhost:3000/api/blog");
   const blogs = await res.json();
   return{
