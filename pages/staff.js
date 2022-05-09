@@ -12,7 +12,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function Staff() {
     
-  const { data, error } = useSWR('/api/staffinfo', fetcher)
+  const { data, error } = useSWR('https://school-website-9nztndkxc-sankalpa.vercel.app/api/staffinfo', fetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
