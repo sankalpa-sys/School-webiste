@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Lobster+Two&family=Lora:ital,wght@0,400;1,500&family=Open+Sans:wght@700&family=Roboto+Condensed:wght@300&family=Water+Brush&display=swap');
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navcomponents { 
+    @apply  cursor-pointer h-10  flex uppercase items-center justify-start rounded-sm transition-colors duration-300 font-semibold text-sm hover:text-gray-400
+  }
+  .form-item{
+    @apply font-light text-sm text-gray-600 font-Roboto h-12 px-3 outline-none
+  }
+}
