@@ -12,7 +12,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function Staff() {
     
-  const { data, error } = useSWR('http://localhost:3000/api/staffinfo', fetcher)
+  const { data, error } = useSWR('/api/staffinfo', fetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>

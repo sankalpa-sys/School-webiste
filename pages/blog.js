@@ -12,7 +12,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function Blog() {
   const router = useRouter()
-  const { data, error } = useSWR("http://localhost:3000/api/blog", fetcher)
+  const { data, error } = useSWR("/api/blog", fetcher)
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
   

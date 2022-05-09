@@ -14,7 +14,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function Eca() {
   const router = useRouter();
-  const { data, error } = useSWR("http://localhost:3000/api/ecaData", fetcher);
+  const { data, error } = useSWR("/api/ecaData", fetcher);
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 

@@ -29,7 +29,7 @@ function Gallery() {
     scrollToTop()
   }, [starting, end])
     
-  const { data, error } = useSWR('http://localhost:3000/api/images', fetcher)
+  const { data, error } = useSWR('/api/images', fetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>

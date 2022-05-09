@@ -18,7 +18,7 @@ function ReadBlog() {
 
 useEffect(() => {
     const getBlog =  async() => {
-        const res = await axios.get(`http://localhost:3000/api/singleblog/${id}`)
+        const res = await axios.get(`/api/singleblog/${id}`)
         setBlog(res.data);
     }
 
