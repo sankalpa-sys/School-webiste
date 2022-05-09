@@ -4,13 +4,16 @@ import {
   MailIcon,
   ClockIcon,
 } from "@heroicons/react/outline";
+import Image from "next/image";
 import React from "react";
 
 function Footer() {
   return (
     <main className="w-screen font-Roboto h-auto flex md:flex-row flex-col items-start justify-between border-t-2 text-gray-600 py-2 pl-4 md:pr-8  bg-gray-100">
       <section className=" flex flex-col py-4 justify-center items-start space-y-8">
-        <img src="/kyamin.png" className="h-32 w-32 rounded-xl" alt="" />
+       <div className="h-32 w-32 relative">
+          <Image src="/kyamin.png" layout="fill"  className=" rounded-xl" alt="" />
+       </div>
         <p className="w-96  text-sm">
           Kyamin Higher Secondary School is a place of education excellence
           where high standards of learning are set and achievements and

@@ -175,7 +175,7 @@ function Contact() {
           width="100%"
           height="500"
           style={{ border: 0 }}
-          allowFullscreen=""
+          allowFullscreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
