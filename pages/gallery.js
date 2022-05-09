@@ -14,18 +14,11 @@ import useSWR from 'swr'
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function Gallery() {
-    
-  const { data, error } = useSWR('http://localhost:3000/api/images', fetcher)
-
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
-
   const router = useRouter()
   const [starting, setStarting] = useState(0)
   const [end, setEnd] = useState(15)
   const [view, setView] = useState(false)
   const [viewingImage, setviewingImage] = useState("")
-
   useEffect(() => {
     const scrollToTop = () => {
       window.scrollTo({
@@ -35,6 +28,12 @@ function Gallery() {
     }
     scrollToTop()
   }, [starting, end])
+    
+  const { data, error } = useSWR('http://localhost:3000/api/images', fetcher)
+
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
+
   const handlePreviousClick = () => {
     setStarting(starting - 15)
     setEnd(end - 15)
