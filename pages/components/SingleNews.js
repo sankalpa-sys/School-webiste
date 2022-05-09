@@ -1,10 +1,11 @@
+import Image from "next/image";
 import React from "react";
 
 function SingleNews() {
   return (
     <main className=" h-auto  w-96 shadow-lg my-4">
-      <div className="bg-green-400 h-56 w-full">
-            <img src="https://images.pexels.com/photos/3992949/pexels-photo-3992949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" className="h-full w-full object-cover object-top" />
+      <div className="h-56 w-full relative">
+      <Image src={"https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"} layout="fill" alt=''/>
       </div>
 
       <div className="my-6 px-3 flex flex-col items-start justify-start space-y-3">

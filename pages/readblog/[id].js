@@ -37,7 +37,7 @@ console.log(blog);
       <Navbar/>
 
       <section className='w-[90%] mx-auto my-4 '>
-        <Image src={blog.thumbnail?blog.thumbnail:"https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"} layout="responsive" height={45} width={100}/>
+        <Image src={blog.thumbnail?blog.thumbnail:"https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"} layout="responsive" height={45} width={100} alt=""/>
         <div className='flex text-sm text-gray-600 my-3 space-x-2'>
           <p className='mt-1'>By</p>
           <p className='font-bold font-Cursive text-lg text-blue-700 '>{blog.author} </p>

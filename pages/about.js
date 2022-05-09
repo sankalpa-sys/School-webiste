@@ -6,8 +6,11 @@ import Footer from "./components/Footer";
 import BottomFooter from "./components/BottomFooter";
 import SocialIcons from "./components/SocialIcons";
 import Head from 'next/head'
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 function About() {
+  const router = useRouter()
   return (
     <div>
       <Head>
@@ -50,11 +53,12 @@ function About() {
             the CDC, Nepal.
           </p>
         </div>
-        <div className="h-96 md:w-[30%] w-full">
-          <img
-            src="https://images.pexels.com/photos/9899966/pexels-photo-9899966.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid w-full h-full "
-            alt=""
+        <div className="h-96 md:w-[40%] w-full relative">
+          <Image
+            src="https://images.pexels.com/photos/207756/pexels-photo-207756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid  "
+            layout="fill"
+            alt="about Picture"
           />
         </div>
       </div>
@@ -80,11 +84,12 @@ function About() {
             inclusion.
           </p>
         </div>
-        <div className="h-96 md:w-[30%] w-full">
-          <img
-            src="https://images.pexels.com/photos/9899966/pexels-photo-9899966.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid w-full h-full "
-            alt=""
+        <div className="h-96 md:w-[40%] w-full relative">
+          <Image
+            src="https://images.pexels.com/photos/4019754/pexels-photo-4019754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid  "
+            layout="fill"
+            alt="about Picture"
           />
         </div>
       </div>
@@ -112,11 +117,12 @@ function About() {
             environment by keeping alive passion for learning among students.
           </p>
         </div>
-        <div className="h-96 md:w-[30%] w-full">
-          <img
-            src="https://images.pexels.com/photos/9899966/pexels-photo-9899966.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid w-full h-full "
-            alt=""
+        <div className="h-96 md:w-[40%] w-full relative">
+          <Image
+            src="https://images.pexels.com/photos/1164572/pexels-photo-1164572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid  "
+            layout="fill"
+            alt="about Picture"
           />
         </div>
       </div>
@@ -129,7 +135,7 @@ function About() {
         }}
       >
         <p to="/contact">
-          <button className="bg-black  text-white font-semibold font-Lora text-center border-2  border-blue-600 p-3 hover:bg-white hover:scale-105 hover:text-black transform transition duration-300 ease-out hover:border-0 active:scale-90 ">
+          <button onClick={()=>router.push('/contact')} className="bg-white rounded-lg  text-black font-semibold font-serif text-center  px-6 py-4 hover:bg-black hover:border hover:text-white  transition-colors duration-300 ease-out active:scale-90 ">
             Contact Us
           </button>
         </p>

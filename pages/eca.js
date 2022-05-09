@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import BottomFooter from "./components/BottomFooter";
 import ReserveSeat from "./components/ReserveSeat";
 import Head from "next/head";
+import Image from "next/image";
 
 function Eca({ecaData}) {
     
@@ -15,7 +16,7 @@ function Eca({ecaData}) {
     
   const router = useRouter();
   return (
-    <main className="bg-gray-100">
+    <main className="bg-gray-200">
       <Head>
         <title>Extra Curricular Activities</title>
         <meta name="description" content="In this
@@ -29,9 +30,9 @@ function Eca({ecaData}) {
       <Header />
       <Navbar />
       <div className="w-screen md:h-[600px] h-[400px] relative">
-        <img
+        <Image
           src="https://images.pexels.com/photos/1231365/pexels-photo-1231365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          className="w-full h-full"
+          layout="fill"
           alt=""
         />
 
@@ -83,10 +84,10 @@ function Eca({ecaData}) {
             <h1 className="font-semibold  text-gray-700 mt-6">ECA COORDINATOR</h1>
             <h1 className="font-semibold font-Cursive text-gray-700 my-2">John Cena</h1>
           </div>
-          <div className="bg-red-400 h-72 w-72 md:h-96 md:w-96">
-            <img
+          <div className=" h-72 w-72 md:h-96 md:w-96 relative shadow-lg rounded-sm">
+            <Image
               src="https://images.pexels.com/photos/25758/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              className="w-full h-full"
+              layout="fill"
               alt=""
             />
           </div>
@@ -94,7 +95,7 @@ function Eca({ecaData}) {
       </section>
 
       {/* eca cards */}
-      <section className="md:px-[100px] px-4 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-20 md:gap-y-40 mb-4">
+      <section className="md:px-[100px] px-4 grid grid-cols-1 md:grid-cols-2  gap-y-20  md:gap-y-24 mb-4">
             {ecaData.map((m)=>(
                 <EcaCard key={m.id} title={m.title} desc={m.description} pic={m.pic}/>
             ))}

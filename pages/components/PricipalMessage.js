@@ -1,10 +1,13 @@
+import Image from "next/image";
 import React from "react";
 
 function PricipalMessage() {
   return (
-    <main className=" md:w-[85%] pr-3 ml-auto h-auto my-14 flex md:flex-row flex-col space-x-3 space-y-6 ">
-      <section className="md:w-[40%] w-full h-full flex flex-col space-y-3 px-4">
-        <img src="/santos.jpeg" className="w-full" />
+    <main className=" md:w-[85%] pr-3 ml-auto h-auto my-14 flex md:flex-row flex-col space-x-3 space-y-6">
+      <section className="md:w-[40%] w-full h-full flex flex-col space-y-3 md:px-4 px-2 ">
+        <div className="w-full bg-red-400 relative h-96">
+             <Image src="/santos.jpeg" className="w-full" layout="fill" alt="" />
+        </div>
         <p className=" font-Roboto mt-4 first-letter:text-yellow-600 first-letter:font-bold first-letter:text-2xl">
           If there is no struggle, there is no progress. The true spirit of the
           saying by Frederick Douglass is relevant in timeless context. Every

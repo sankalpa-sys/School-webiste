@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MenuIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 function Navbar() {
   const router = useRouter();
@@ -20,10 +21,12 @@ function Navbar() {
   return (
     <>
       <main className="w-screen h-16 select-none bg-gray-300 flex items-center justify-between pl-2 pr-2 md:pr-8 shadow-md">
-        <img
+        <Image
           src="https://4.bp.blogspot.com/-xQiVfurjEqg/WzOeOJ4aTdI/AAAAAAAAol0/72y9ICam56shTYXRwaUL7vhqqbTDAM80ACLcBGAs/s1600/Flag_of_Nepal.gif"
           className="h-16 w-16 p-1"
           alt=""
+          height={50}
+          width={50}
         />
         <div>
           <MenuIcon
@@ -32,7 +35,7 @@ function Navbar() {
           />
         </div>
         <div className="hidden md:flex  w-[60%] justify-between items-center">
-          <Link href={"/"}>
+          <Link href={"/"} passHref>
             <p
               className={
                 router.pathname === "/"
@@ -43,7 +46,7 @@ function Navbar() {
               Home
             </p>
           </Link>
-          <Link href={"/about"}>
+          <Link href={"/about"} passHref>
             <p
               className={
                 router.pathname === "/about"
@@ -55,7 +58,7 @@ function Navbar() {
             </p>
           </Link>
 
-          <Link href={"/eca"}>
+          <Link href={"/eca"} passHref>
             <p
               className={
                 router.pathname === "/eca"
@@ -66,7 +69,7 @@ function Navbar() {
               ECA
             </p>
           </Link>
-          <Link href={"/staff"}>
+          <Link href={"/staff"} passHref>
             <p
               className={
                 router.pathname === "/staff"
@@ -78,7 +81,7 @@ function Navbar() {
             </p>
           </Link>
 
-          <Link href={"/blog"}>
+          <Link href={"/blog"} passHref>
             <p
               className={
                 router.pathname === "/blog"
@@ -89,7 +92,7 @@ function Navbar() {
               Blog
             </p>
           </Link>
-          <Link href={"/gallery"}>
+          <Link href={"/gallery"} passHref>
             <p
               className={
                 router.pathname === "/gallery"
@@ -100,7 +103,7 @@ function Navbar() {
               Gallery
             </p>
           </Link>
-          <Link href={"/contact"}>
+          <Link href={"/contact"} passHref>
             <p
               className={
                 router.pathname === "/contact"
@@ -122,21 +125,21 @@ function Navbar() {
       <div
         className={`w-[90%] z-50 font-mono mt-2 mx-auto mb-4 md:hidden ${display} flex-col justify-start py-6 items-start pl-10 transition-[height] duration-700 space-y-8 text-gray-600 ${height} bg-gray-200`}
       >
-        <Link href={"/"}>
+        <Link href={"/"} passHref>
           <p className="navcomponents">Home</p>
         </Link>
-        <Link href={"/about"}>
+        <Link href={"/about"} passHref>
           <p className="navcomponents">About Us</p>
         </Link>
 
-        <Link href={"/eca"}>
+        <Link href={"/eca"} passHref>
           <p className="navcomponents">ECA</p>
         </Link>
-        <Link href={"/staff"}>
+        <Link href={"/staff"} passHref>
           <p className="navcomponents">Staff</p>
         </Link>
 
-        <Link href={"/blog"}>
+        <Link href={"/blog"} passHref>
             <p
               className={
                 router.pathname === "/blog"
@@ -147,10 +150,10 @@ function Navbar() {
               Blog
             </p>
           </Link>
-        <Link href={"/gallery"}>
+        <Link href={"/gallery"} passHref>
           <p className="navcomponents">Gallery</p>
         </Link>
-        <Link href={"/contact"}>
+        <Link href={"/contact"} passHref>
           <p className="navcomponents">Contact</p>
         </Link>
         <button className="bg-green-600 text-white py-2 px-8 ">

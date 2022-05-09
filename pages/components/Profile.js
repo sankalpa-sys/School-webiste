@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 function Profile({ name, post, pic }) {
@@ -23,14 +24,15 @@ function Profile({ name, post, pic }) {
         <div
           className={
             hover === "flex"
-              ? "md:h-[40%] h-[50%]  w-[55%] md:w-[50%]  rounded-xl mx-auto relative"
+              ? "md:h-[40%]  h-[50%]   w-[55%] md:w-[50%]  rounded-xl mx-auto relative"
               : "md:h-[60%] h-[60%] w-[60%] md:w-[50%]  rounded-xl mx-auto relative"
           }
         >
-          <img
+          <Image
             src={pic}
             alt=""
-            className="rounded-xl h-full w-full absolute -top-6 object-top"
+            className="rounded-xl  absolute -top-6 object-top"
+            layout="fill"
           />
         </div>
         <div

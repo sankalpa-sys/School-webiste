@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 function Slider() {
@@ -9,14 +10,14 @@ function Slider() {
       data-bs-ride="carousel"
     >
       <div className="carousel-inner md:h-[680px] select-none">
-        <div className="carousel-item h-full active">
-          <img src="https://images.pexels.com/photos/296302/pexels-photo-296302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="d-block w-100 h-full" alt="..." />
+        <div className="carousel-item active w-screen md:h-[100%] relative">
+          <Image src="https://images.pexels.com/photos/296302/pexels-photo-296302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" layout="fill"  className="d-block " alt="..." />
         </div>
-        <div className="carousel-item">
-          <img src="https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="d-block w-100 h-full" alt="..." />
+        <div className="carousel-item w-screen h-[100%] relative ">
+          <Image src="https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" layout="fill" className="d-block " alt="..." />
         </div>
-        <div className="carousel-item">
-          <img src="https://images.pexels.com/photos/159632/school-children-happy-food-159632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="d-block h-full w-100" alt="..." />
+        <div className="carousel-item w-screen h-[100%] relative">
+          <Image src="https://images.pexels.com/photos/159632/school-children-happy-food-159632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" layout="fill" className="d-block " alt="..." />
         </div>
       </div>
       <button

@@ -19,24 +19,27 @@ function Footer() {
           potential is maximized to help them pursue their dream.
         </p>
         <div className="flex md:space-x-4 space-x-3 ">
-          <a target="_blank" href="https://www.facebook.com/Sankhalifa.33/">
+          <a target="_blank" rel="noreferrer" href="https://www.facebook.com/Sankhalifa.33/">
             {" "}
             <i className="fab fa-facebook fa-2x text-blue-500  cursor-pointer"></i>
           </a>
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://www.youtube.com/channel/UCaFCokjzNa0QLTQ8ZAOyU_g"
           >
             <i className="fab fa-youtube fa-2x text-red-500  cursor-pointer"></i>
           </a>
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://www.instagram.com/_sankalpa_neupane/?hl=en"
           >
             <i className="fab fa-instagram fa-2x text-pink-500  cursor-pointer "></i>
           </a>
           <a
             target="_blank"
+            rel="noreferrer"
             href="https://www.linkedin.com/in/sankalpa-neupane-215639208/"
           >
             <i className="fab fa-linkedin fa-2x text-blue-500  cursor-pointer"></i>

@@ -9,6 +9,7 @@ import ReserveSeat from "./components/ReserveSeat";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import axios from "axios";
+import Image from "next/image";
 
 function Contact() {
   const router = useRouter();
@@ -46,9 +47,9 @@ function Contact() {
       <Header />
       <Navbar />
       <div className="w-screen h-[500px] relative">
-        <img
+        <Image
           src="https://cdn.pixabay.com/photo/2017/09/02/11/04/adult-education-2706977__480.jpg"
-          className="w-full h-full"
+          layout="fill"
           alt=""
         />
 
@@ -135,25 +136,28 @@ function Contact() {
             </div>
           </div>
           <div className="flex  ml-2 mt-4 mb-2 space-x-4 z-50  rounded-lg px-4 items-center py-2">
-            <a target="_blank" href="https://www.facebook.com/Sankhalifa.33/">
+            <a target="_blank" rel="noreferrer" href="https://www.facebook.com/Sankhalifa.33/">
               {" "}
               <i className="fab fa-facebook fa-2x text-blue-500  cursor-pointer"></i>
             </a>
 
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.youtube.com/channel/UCaFCokjzNa0QLTQ8ZAOyU_g"
             >
               <i className="fab fa-youtube fa-2x text-red-500  cursor-pointer"></i>
             </a>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.instagram.com/_sankalpa_neupane/?hl=en"
             >
               <i className="fab fa-instagram fa-2x text-pink-500  cursor-pointer "></i>
             </a>
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.linkedin.com/in/sankalpa-neupane-215639208/"
             >
               <i className="fab fa-linkedin fa-2x text-blue-500  cursor-pointer"></i>

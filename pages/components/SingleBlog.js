@@ -10,7 +10,7 @@ function SingleBlog({id,title, content, thumbnail, author, createdAt}) {
   return (
     <main className=' font-Roboto shadow-xl rounded-lg '>
         <div className='w-full '>
-            <Image src={thumbnail} className={"rounded-t-lg"} height={70} width={100} layout="responsive"/>
+            <Image src={thumbnail} className={"rounded-t-lg"} height={70} width={100} layout="responsive" alt=''/>
         </div>
 
         <section className='px-4 flex space-y-3  flex-col py-8 border-r border-b border-l rounded-b-lg'>

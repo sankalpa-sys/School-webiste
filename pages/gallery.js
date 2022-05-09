@@ -57,9 +57,9 @@ function Gallery({images}) {
       <Header />
       <Navbar />
       <div className={view? "w-screen md:h-[600px] h-[400px] relative opacity-30 transition-opacity duration-300": "w-screen md:h-[600px] h-[400px] relative transition-opacity duration-300"}>
-        <img
+        <Image
           src="https://images.pexels.com/photos/236172/pexels-photo-236172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          className="w-full h-full"
+          layout="fill"
           alt=""
         />
 
@@ -76,7 +76,7 @@ function Gallery({images}) {
       {/* Photos */}
       <section className={view? "screen grid grid-cols-2 md:grid-cols-3 my-4 gap-2 px-2 transition-all duration-300  opacity-30 ":"screen grid grid-cols-2 md:grid-cols-3 my-4 gap-2 px-2 transition-all duration-300 "}>
        {images.slice(starting,end).map((image)=>(
-          <Image onClick={()=>handleImageClick(image.img)} className={view?"cursor-pointer transition-opacity duration-300 opacity-30":"cursor-pointer hover:opacity-60 transition-opacity duration-300"} key={image.id} src={image.img} layout='responsive' height={50} width={50}/>
+          <Image onClick={()=>handleImageClick(image.img)} className={view?"cursor-pointer transition-opacity duration-300 opacity-30":"cursor-pointer hover:opacity-60 transition-opacity duration-300"} key={image.id} src={image.img} layout='responsive' alt="" height={50} width={50}/>
        ))}
         
       </section>

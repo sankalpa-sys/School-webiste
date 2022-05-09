@@ -1,5 +1,6 @@
 
 import axios from 'axios'
+import Image from 'next/image'
 import React,{useState} from 'react'
 
 function ReserveSeat() {
@@ -24,8 +25,8 @@ function ReserveSeat() {
 
   return (
     <main className='w-screen h-auto flex md:flex-row flex-col mt-10 '>
-      <div className='md:w-1/2 w-full h-[500px]'>
-        <img src="https://images.pexels.com/photos/8617893/pexels-photo-8617893.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" className='h-full w-full shrink-0' />
+      <div className='md:w-1/2 w-full relative h-[500px]'>
+        <Image src="https://images.pexels.com/photos/8617893/pexels-photo-8617893.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" layout='fill' alt="" className=' shrink-0' />
       </div>
 
       <section className='md:w-1/2 w-full flex flex-col  px-4 py-4  bg-gray-200'>

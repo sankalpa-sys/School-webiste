@@ -10,7 +10,7 @@ function News() {
           <SingleNews/>
           <SingleNews/>
           <SingleNews/>
-          <SingleNews/>
+          
           <SingleNews/>
       </section>
     </main>
