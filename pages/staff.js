@@ -12,7 +12,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function Staff() {
     
-  const { data, error } = useSWR('school-website-sepia.vercel.app/api/staffinfo', fetcher)
+  const { data, error } = useSWR('/api/staffinfo', fetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
