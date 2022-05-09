@@ -53,7 +53,7 @@ function Addblog() {
           // Handle successful uploads on complete
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            axios.post("http://localhost:3000/api/blog", {title: title, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then((alert("Blog Added"))).catch((err)=>console.log(err))
+            axios.post("/api/blog", {title: title, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then((alert("Blog Added"))).catch((err)=>console.log(err))
           });
         }
       );
