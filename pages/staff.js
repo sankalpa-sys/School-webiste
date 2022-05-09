@@ -17,7 +17,11 @@ function Staff({data}) {
         <title>Staff Information</title>
         <meta name="description" content="Kyamin Secondary School Staffs" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          crossOrigin="anonymous"
+        />
 
       </Head>
         <Header/>
