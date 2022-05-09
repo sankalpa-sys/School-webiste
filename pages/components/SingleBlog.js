@@ -20,7 +20,7 @@ function SingleBlog({id,title, content, thumbnail, author, createdAt}) {
                 <p className='text-gray-600 text-sm font-Cursive'>by</p>
                 <p className='text-blue-700 text-sm font-Cursive'>{author}</p>
             </div>
-            <p className='text-sm text-gray-600  first-letter:uppercase first-letter:text-yellow-600 first-letter:font-bold first-letter:text-xl'>{content.slice(0,150) + " " + "..."}</p>
+            <p className='text-sm text-gray-600  first-letter:uppercase first-letter:text-yellow-600 first-letter:font-bold first-letter:text-xl'>{content?content.slice(0,150) + " " + "...":""}</p>
 
             <button onClick={()=>handleReadMoreClick(id)} className='self-start bg-green-500 text-white px-3 py-2 text-sm rounded-md hover:bg-green-600 transition-colors '>Read More</button>
         </section>
