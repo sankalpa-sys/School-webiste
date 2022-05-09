@@ -17,7 +17,7 @@ function About() {
         <title>About Us</title>
         <meta name="description" content="Kyamin secondary School is a co-ed Nepali medium school from PG to secondary level. The school was established in the year 1996 AD with the purpose of enhancing holistic development of students in a genial environment through innovative methodology. The school is located at Shantinagar, New Baneshwor, Kathmandu, Nepal. It has 700 plus students at present. The school aims to enhance all round development of students in an amiable educational environment through inventive methodologies. It offers activities and programs that help harmonious development of personality in loving and caring environment. The school is best known for individual centered learning approach. The courses cover the curriculum prescribed by the CDC, Nepal." />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossOrigin="anonymous" />
 
       </Head>
       <Header/>

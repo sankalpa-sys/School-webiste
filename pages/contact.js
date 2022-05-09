@@ -42,6 +42,7 @@ function Contact() {
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          crossOrigin="anonymous"
         />
       </Head>
       <Header />
@@ -175,7 +176,7 @@ function Contact() {
           width="100%"
           height="500"
           style={{ border: 0 }}
-          allowFullscreen
+         
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
