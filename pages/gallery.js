@@ -66,23 +66,19 @@ function Gallery() {
       </Head>
       <Header />
       <Navbar />
-      <div className={view? "w-screen md:h-[600px] h-[400px] relative opacity-30 transition-opacity duration-300": "w-screen md:h-[600px] h-[400px] relative transition-opacity duration-300"}>
-        <Image
-          src="https://images.pexels.com/photos/236172/pexels-photo-236172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          layout="fill"
-          alt=""
-        />
+      <div
+        className="md:h-[500px] h-[500px] bg-fixed  bg-bottom  bg-no-repeat bg-cover space-y-8 text-gray-300 flex flex-col justify-center items-center"
+        style={{
+          backgroundImage:
+            'url("https://images.pexels.com/photos/236172/pexels-photo-236172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
+        }}
+      >
+        <h1 className="text-gray-900 text-center text-4xl font-bold font-mono md:text-5xl">Gallery</h1>
+        <button onClick={()=>router.push("/admission")} className="bg-blue-800 px-5 py-4 shadow-xl rounded-md hover:bg-blue-900 transition-all duration-300 ">Register</button>
+      </div> 
 
-        <h1 className=" text-blue-700 absolute left-[150px] md:left-[670px] md:top-[80px] top-[20px]  font-bold text-2xl md:text-4xl mt-10">
-          Gallery
-        </h1>
-        <button
-          onClick={() => router.push("/admission")}
-          className="absolute md:left-[650px]  md:top-[400px] top-[320px] left-[120px] transition-colors duration-300 bg-black hover:bg-white hover:text-black text-white py-5 px-10 shadow-lg animate-bounce "
-        >
-          REGISTER &rarr;
-        </button>
-      </div>
+      
+
       {/* Photos */}
       <section className={view? "screen grid grid-cols-2 md:grid-cols-3 my-4 gap-2 px-2 transition-all duration-300  opacity-30 ":"screen grid grid-cols-2 md:grid-cols-3 my-4 gap-2 px-2 transition-all duration-300 "}>
        {data.slice(starting,end).map((image)=>(

@@ -47,24 +47,25 @@ function Contact() {
       </Head>
       <Header />
       <Navbar />
-      <div className="w-screen h-[500px] relative">
-        <Image
-          src="https://cdn.pixabay.com/photo/2017/09/02/11/04/adult-education-2706977__480.jpg"
-          layout="fill"
-          alt=""
-        />
-
-        <h1 className="text-white absolute left-[110px] md:left-[550px] top-0  font-bold text-4xl md:text-7xl mt-10">
+      <div
+        className="md:h-[500px] h-[500px] bg-fixed w-full  bg-center bg-no-repeat bg-cover space-y-8 text-gray-300 flex flex-col justify-center items-center"
+        style={{
+          backgroundImage:
+            'url("https://cdn.pixabay.com/photo/2017/09/02/11/04/adult-education-2706977__480.jpg")',
+        }}
+      >
+        <h1 className="text-gray-100  font-bold font-mono text-4xl  text-center md:text-5xl">
           Contact Us
         </h1>
         <button
           onClick={() => router.push("/admission")}
-          className="absolute md:left-[650px]  top-[400px] left-[120px] transition-all duration-200 bg-black hover:bg-white hover:text-black text-white py-5 px-10 shadow-lg animate-bounce "
+          className="bg-blue-800 px-5 py-4 shadow-xl rounded-md hover:bg-blue-900 transition-all duration-300 "
         >
-          REGISTER &rarr;
+          Register
         </button>
       </div>
 
+   
       <section className="md:flex md:my-4 md:mx-4">
         <div className="w-full bg-gray-200 px-4 py-4">
           <div className="flex justify-center items-start space-y-1 flex-col">

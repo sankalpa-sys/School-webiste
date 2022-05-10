@@ -41,7 +41,7 @@ function Blog() {
             'url("https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
         }}
       >
-        <h1 className="text-gray-900  font-bold font-Lora text-7xl">BLOGS</h1>
+        <h1 className="text-gray-900 text-center text-4xl font-bold font-mono md:text-5xl">BLOGS</h1>
         <button onClick={()=>router.push("/addblog")} className="bg-blue-800 px-5 py-4 shadow-xl rounded-md hover:bg-blue-900 transition-all duration-300 ">Add a Blog</button>
       </div> 
 

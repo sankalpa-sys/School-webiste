@@ -18,9 +18,8 @@ function Eca() {
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
-  
   return (
-    <main className="bg-gray-200">
+    <main className="bg-gray-200 overflow-x-hidden">
       <Head>
         <title>Extra Curricular Activities</title>
         <meta
@@ -39,21 +38,21 @@ function Eca() {
       </Head>
       <Header />
       <Navbar />
-      <div className="w-screen md:h-[600px] h-[400px] relative">
-        <Image
-          src="https://images.pexels.com/photos/1231365/pexels-photo-1231365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          layout="fill"
-          alt=""
-        />
-
-        <h1 className=" text-blue-700 absolute left-[120px] md:left-[550px] md:top-[80px] top-[20px]  font-bold text-2xl md:text-4xl mt-10">
+      <div
+        className="md:h-[500px] h-[500px] bg-fixed w-full  bg-center bg-no-repeat bg-cover space-y-8 text-gray-300 flex flex-col justify-center items-center"
+        style={{
+          backgroundImage:
+            'url("https://images.pexels.com/photos/1231365/pexels-photo-1231365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
+        }}
+      >
+        <h1 className="text-black drop-shadow-xl  font-bold font-mono text-4xl md:text-5xl  text-center">
           Extra Curricular Activities
         </h1>
         <button
           onClick={() => router.push("/admission")}
-          className="absolute md:left-[650px]  md:top-[400px] top-[320px] left-[120px] transition-colors duration-300 bg-black hover:bg-white hover:text-black text-white py-5 px-10 shadow-lg animate-bounce "
+          className="bg-blue-800 px-5 py-4 shadow-xl rounded-md hover:bg-blue-900 transition-all duration-300 "
         >
-          REGISTER &rarr;
+          Register
         </button>
       </div>
 
@@ -100,11 +99,12 @@ function Eca() {
               John Cena
             </h1>
           </div>
-          <div className=" h-72 w-72 md:h-96 md:w-96 relative shadow-lg rounded-sm">
+          <div className="h-72 w-72 md:h-96  md:w-96 relative shadow-lg rounded-sm">
             <Image
               src="https://images.pexels.com/photos/25758/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               layout="fill"
               alt=""
+              className=""
             />
           </div>
         </div>
