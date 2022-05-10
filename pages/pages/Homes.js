@@ -9,6 +9,7 @@ import ReserveSeat from '../components/ReserveSeat'
 import Footer from '../components/Footer'
 import BottomFooter from '../components/BottomFooter'
 
+
 function Homes() {
   return (
     <div>
@@ -18,6 +19,7 @@ function Homes() {
         <Slider/>
         <PricipalMessage/>
         <News/>
+       
         <BasicInfo/>
         <ReserveSeat/>
         <Footer/>

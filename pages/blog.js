@@ -13,8 +13,8 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json())
 function Blog() {
   const router = useRouter()
   const { data, error } = useSWR("/api/blog", fetcher)
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
+  if (error) return <div className="h-screen w-screen flex justify-center items-center"><h1 className="text-red-600 font-bold text-2xl animate-bounce">Failed to Load</h1></div>
+  if (!data) return <div className="h-screen w-screen flex justify-center items-center"><h1 className="text-blue-700 font-bold text-2xl animate-bounce">Loading...</h1></div>
   
   return (
     <main className="">

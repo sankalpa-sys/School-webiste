@@ -19,7 +19,7 @@ function Contact() {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-      axios.post("http://localhost:3000/api/contact",{name:name, email:email, message:message})
+      axios.post("/api/contact",{name:name, email:email, message:message})
       alert("Message sent successfully.")
       setEmail("")
       setName("")

@@ -12,7 +12,7 @@ function ReserveSeat() {
   const handleSubmit = async(e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:3000/api/reserveSeat', {name, email, class:classs, phone})
+      await axios.post('/api/reserveSeat', {name, email, class:classs, phone})
       alert("Successfully reserved a seat")
       setname("")
       setclasss("")
