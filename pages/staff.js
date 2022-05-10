@@ -20,17 +20,8 @@ function Staff() {
     
   const { data, error } = useSWR('/api/staffinfo', fetcher);
   
- if(!data) return (
-  <main className='w-screen h-screen  flex items-center space-x-2 justify-center bg-gray-200'>
-  <h1 className='text-green-600  font-bold text-2xl animate-bounce' >Loading </h1>
-  
-</main>
- )
-  if(error) return (
-    <main className='w-screen h-screen'>
-      <h1 className='text-red-600 font-bold text-2xl' >Something went Wrong!</h1>
-    </main>
-  )
+  if (error) return <div className="h-screen w-screen flex justify-center items-center"><h1 className="text-red-600 font-bold text-2xl animate-bounce">Failed to Load</h1></div>
+  if (!data) return <div className="h-screen w-screen flex justify-center items-center"><h1 className="text-blue-700 font-bold text-2xl animate-bounce">Loading...</h1></div>
     
   return (
     <main className='bg-gradient-to-r from-pink-200 to-orange-200'>
