@@ -24,7 +24,7 @@ function Staff() {
   if (!data) return <div className="h-screen w-screen flex justify-center items-center"><h1 className="text-blue-700 font-bold text-2xl animate-bounce">Loading...</h1></div>
     
   return (
-    <main className='bg-gradient-to-r from-pink-200 to-orange-200'>
+    <main className=''>
       <Head>
         <title>Staff Information</title>
         <meta name="description" content="Kyamin Secondary School Staffs" />
@@ -38,8 +38,19 @@ function Staff() {
       </Head>
         <Header/>
         <Navbar/>
+
+        <div
+        className="md:h-[500px] h-[500px] bg-fixed  bg-bottom  bg-no-repeat bg-cover space-y-8 text-gray-300 flex flex-col justify-center items-center"
+        style={{
+          backgroundImage:
+            'url("https://images.pexels.com/photos/8866775/pexels-photo-8866775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
+        }}
+      >
+        <h1 className="text-gray-100 text-center text-4xl font-bold font-mono md:text-5xl">Our Staff</h1>
         
-        <div className='grid w-full grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-32 py-24 md:px-10 px-4 px-auto place-items-center'>
+      </div> 
+        
+        <div className='grid bg-gradient-to-r from-gray-100 to-slate-100 w-full grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-12 py-24 md:px-10 px-4 px-auto place-items-center'>
              {data.map(staff => <Profile key={staff.id} name={staff.name} post ={staff.post} pic={staff.pic} />)}
         </div>
         <Footer/>

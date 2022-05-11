@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   images: {
-      domains: ['cdn.pixabay.com',"images.pexels.com", "firebasestorage.googleapis.com", "4.bp.blogspot.com"]
+      domains: ['cdn.pixabay.com',"images.pexels.com", "firebasestorage.googleapis.com", "4.bp.blogspot.com", "lh3.googleusercontent.com"]
   },
   
 }

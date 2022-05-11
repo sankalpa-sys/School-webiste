@@ -13,7 +13,9 @@ import {
 import app from "../firebase";
 import axios from "axios";
 import Head from "next/head";
+import { useSession } from "next-auth/react"
 function Addblog() {
+  const { data: session } = useSession()
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [name, setName] = useState("")
@@ -62,6 +64,8 @@ function Addblog() {
     }
 
   };
+
+  console.log(session?session.user:"no session")
 
   return (
     <main className="">
@@ -153,12 +157,13 @@ function Addblog() {
             onChange={(e) => setContent(e.target.value)}
           ></textarea>
 
-          <button
-            className="bg-green-600 rounded-full text-white px-4 py-2 shadow-xl hover:bg-blue-600 shadow-green-700/80 hover:shadow-blue-700/80 font-serif active:scale-90 transform transition duration-75 ease-out"
+          <button disabled={!session}
+            className="bg-green-600 rounded-full text-white px-4 py-2 shadow-xl hover:bg-blue-600 shadow-green-700/80 hover:shadow-blue-700/80 font-serif disabled:hover:bg-green-600 disabled:active:scale-100 disabled:opacity-40 disabled:shadow-none active:scale-90 transform transition duration-75 ease-out"
             type="submit"
           >
             Publish
           </button>
+        {!session && (  <p className=" text-sm text-red-600">You need to sign in to add a blog!</p>)}
         </form>
       </section>
       <ReserveSeat />

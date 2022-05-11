@@ -17,21 +17,21 @@ function Profile({ name, post, pic }) {
         onMouseLeave={handleMouseLeave}
         className={
           hover === "flex"
-            ? "w-[80%] md:w-[80%] mx-auto   h-96  rounded-xl relative shadow-2xl transition-height duration-500 bg-gray-200"
-            : "w-[80%] mx-auto  md:w-[80%] transition-all duration-500  relative h-72 rounded-xl shadow-2xl bg-gray-200"
+            ? "w-[80%] md:w-[80%] mx-auto  h-96 pt-2  rounded-xl relative shadow-xl transition-height duration-500 bg-gray-200"
+            : "w-[80%] mx-auto  md:w-[80%] transition-all pt-2 duration-500  relative h-72 rounded-xl shadow-xl bg-gray-200"
         }
       >
         <div
           className={
             hover === "flex"
-              ? "md:h-[40%]  h-[50%]   w-[55%] md:w-[50%]  rounded-xl mx-auto relative"
+              ? "md:h-[40%]  h-[50%] w-[55%] md:w-[50%]  rounded-xl mx-auto relative"
               : "md:h-[60%] h-[60%] w-[60%] md:w-[50%]  rounded-xl mx-auto relative"
           }
         >
           <Image
             src={pic}
             alt=""
-            className="rounded-xl  absolute -top-6 object-top"
+            className="rounded-xl object-top"
             layout="fill"
           />
         </div>
