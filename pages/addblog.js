@@ -15,7 +15,7 @@ import axios from "axios";
 import Head from "next/head";
 import { useSession } from "next-auth/react"
 function Addblog() {
-  const { data: session } = useSession()
+  const { data: session, status } = useSession()
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [name, setName] = useState("")
@@ -23,7 +23,6 @@ function Addblog() {
   const [grade, setGrade] = useState(null)
   const [img, setImg] = useState(null);
   const handleSubmit = async (e) => {
-    console.log("submit started");
     e.preventDefault();
     if (img !== null) {
       const fileName = new Date().getTime() + img.name;
@@ -55,7 +54,7 @@ function Addblog() {
           // Handle successful uploads on complete
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            axios.post("/api/blog", {title: title, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then((alert("Blog Added"))).catch((err)=>console.log(err))
+            axios.post("/api/blog", {title: title,email:session.user.email, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then((alert("Blog Added"))).catch((err)=>console.log(err))
           });
         }
       );
@@ -65,7 +64,8 @@ function Addblog() {
 
   };
 
-  console.log(session?session.user:"no session")
+  console.log(status);
+
 
   return (
     <main className="">

@@ -5,6 +5,7 @@ const blogSchema = new mongoose.Schema({
     thumbnail: {type: String, required:false},
     content: {type: String, required: true},
     author: {type: String, required: true},
+    email: {type: String, required: true},
     grade: {type: Number},
     post: {type: String}
 }, {timestamps: true});

@@ -22,7 +22,9 @@ function Header() {
                         <button className='bg-black h-full text-white w-20' onClick={() => signOut()}>Sign out</button>
                     </div>
 
-                ):( <button className='bg-black h-full text-white w-20 my-1' onClick={() => signIn()}>Sign in</button>)}
+                ):( <div className='flex h-full items-center py-1 '>
+                    <button className='bg-black h-full text-white w-20 my-1' onClick={() => signIn()}>Sign in</button>
+                </div>)}
             </div>
         </section>
     </main>

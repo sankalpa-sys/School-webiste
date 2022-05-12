@@ -40,13 +40,13 @@ function Staff() {
         <Navbar/>
 
         <div
-        className="md:h-[500px] h-[500px] bg-fixed  bg-bottom  bg-no-repeat bg-cover space-y-8 text-gray-300 flex flex-col justify-center items-center"
+        className="md:h-[500px] h-[500px] bg-fixed   bg-bottom bg-no-repeat bg-cover space-y-8 text-gray-300 flex flex-col justify-center items-center"
         style={{
           backgroundImage:
             'url("https://images.pexels.com/photos/8866775/pexels-photo-8866775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
         }}
       >
-        <h1 className="text-gray-100 text-center text-4xl font-bold font-mono md:text-5xl">Our Staff</h1>
+        <h1 className="md:text-gray-100   text-black drop-shadow-2xl  text-center  font-bold font-mono text-4xl md:text-5xl">Our Staff</h1>
         
       </div> 
         

@@ -10,6 +10,7 @@ const handler =  async(req, res) => {
             content: req.body.content,
             thumbnail: req.body.thumbnail,
             author: req.body.author,
+            email: req.body.email,
             grade: req.body.grade,
             post: req.body.post
         })
