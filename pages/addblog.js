@@ -14,7 +14,10 @@ import app from "../firebase";
 import axios from "axios";
 import Head from "next/head";
 import { useSession } from "next-auth/react"
+import { useRouter } from "next/router";
+
 function Addblog() {
+  const router = useRouter();
   const { data: session, status } = useSession()
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -54,7 +57,7 @@ function Addblog() {
           // Handle successful uploads on complete
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            axios.post("/api/blog", {title: title,email:session.user.email, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then((alert("Blog Added"))).catch((err)=>console.log(err))
+            axios.post("/api/blog", {title: title,email:session.user.email, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then((alert("Blog Added"))).then(()=>router.push('/blog')).catch((err)=>console.log(err))
           });
         }
       );

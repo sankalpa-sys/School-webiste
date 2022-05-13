@@ -24,12 +24,6 @@ useEffect(() => {
 
     getBlog()
 }, [id])
-
-
-console.log(blog);
-
-
-
   
   return (
     <main>
@@ -41,8 +35,14 @@ console.log(blog);
         <div className='flex text-sm text-gray-600 my-3 space-x-2'>
           <p className='mt-1'>By</p>
           <p className='font-bold font-Cursive text-lg text-blue-700 '>{blog.author} </p>
-          <p className='mt-1'>({blog.post}, class {blog.grade?blog.grade:""}),</p>
-          <p className='text-xs mt-2 '>{moment(blog.createdAt).format('LL')}</p>
+          {blog.post === "student"?(
+            <p className='mt-1'>({blog.post}, class {blog.grade?blog.grade:""}),</p>
+              
+            
+          ):(
+            <p className='mt-1'>({blog.post}),</p>
+          )}
+          <p className='text-xs mt-2 '> on {moment(blog.createdAt).format('LL')}</p>
 
           
         </div>

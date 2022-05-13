@@ -14,6 +14,15 @@ const handler  =  async(req, res) => {
            res.status(400).send(error)
           }
       }
+
+      else if(req.method === 'DELETE') {
+          try {
+                await Blog.findByIdAndDelete(pid);
+                res.status(200).send("Blog deleted")
+          }catch(err){
+              res.status(400).send(err)
+          }
+      }
 }
 
 export default handler

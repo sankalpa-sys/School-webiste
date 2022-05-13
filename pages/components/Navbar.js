@@ -116,7 +116,7 @@ function Navbar() {
           </Link>
           <button
             onClick={() => router.push("/admission")}
-            className="bg-transparent text-pink-600 border border-pink-600  text-sm transition-shadow ease-out  px-5 py-3 shadow-lg hover:shadow-pink-600/30 duration-300 "
+            className="bg-transparent text-pink-600 border border-pink-600 hover:text-pink-500 hover:border-pink-500  text-sm transition-shadow ease-out  px-5 py-3 shadow-lg hover:shadow-pink-500/40 duration-300 "
           >
             REGISTER NOW
           </button>
