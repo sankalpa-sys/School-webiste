@@ -2,6 +2,7 @@
 import axios from 'axios'
 import Image from 'next/image'
 import React,{useState} from 'react'
+import toast, { Toaster } from "react-hot-toast";
 
 function ReserveSeat() {
 
@@ -11,9 +12,10 @@ function ReserveSeat() {
   const [phone, setphone] = useState("")
   const handleSubmit = async(e) => {
     e.preventDefault()
+    const loadingtoast = toast.loading("Loading...")
     try {
       await axios.post('/api/reserveSeat', {name, email, class:classs, phone})
-      alert("Successfully reserved a seat")
+      toast.success("Successfully reserved a seat", {id: loadingtoast})
       setname("")
       setclasss("")
       setemail("")
@@ -25,6 +27,8 @@ function ReserveSeat() {
 
   return (
     <main className='w-screen h-auto flex md:flex-row flex-col mt-10 '>
+      <Toaster position="top-center" reverseOrder={false} />
+
       <div className='md:w-1/2 w-full relative h-[500px]'>
         <Image src="https://images.pexels.com/photos/8617893/pexels-photo-8617893.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" layout='fill' alt="" className=' shrink-0' />
       </div>
@@ -35,7 +39,7 @@ function ReserveSeat() {
             <input type="number" max={10} min={1} onChange={(e)=>setclasss(e.target.value)} value={classs} placeholder='Class' className='form-item' />
             <input type="email" onChange={(e)=>setemail(e.target.value)} value={email} placeholder='Email' className='form-item' />
             <input type="text" onChange={(e)=>setphone(e.target.value)} value={phone} placeholder='Phone' className='form-item' />
-            <button className='bg-green-500 hover:bg-green-600 transition-colors duration-700 text-gray-200 py-4'>
+            <button disabled={!name || !classs || !email || !phone } className='bg-green-500 hover:bg-green-600 transition-colors duration-700 ease-out  text-gray-200 py-4 disabled:hover:bg-green-500 disabled:opacity-50'>
               <h1 className='text-2xl font-bold'>Reserve my seat</h1>
               <p className='font-Cursive font-semibold'>( get instant access to online classes )</p>
             </button>

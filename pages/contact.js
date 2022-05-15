@@ -9,7 +9,7 @@ import ReserveSeat from "./components/ReserveSeat";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import axios from "axios";
-import Image from "next/image";
+import toast, { Toaster } from "react-hot-toast";
 
 function Contact() {
   const router = useRouter();
@@ -18,9 +18,10 @@ function Contact() {
   const [message, setMessage] = useState("")
   const handleSubmit = async(e) => {
     e.preventDefault();
+    const loadingtoast = toast.loading("Loading...")
     try {
       axios.post("/api/contact",{name:name, email:email, message:message})
-      alert("Message sent successfully.")
+      toast.success("Message Sent Successfully", {id: loadingtoast})
       setEmail("")
       setName("")
       setMessage("")
@@ -104,7 +105,7 @@ function Contact() {
               className="w-[90%] text-sm px-3 py-2 outline-none text-gray-600"
               value={message}
             ></textarea>
-            <button className="bg-blue-700 text-white py-2 px-3 rounded-lg">
+            <button disabled={!name || !email || !message} type="submit" className="bg-blue-700 text-white py-2 px-3 rounded-lg disabled:hover:bg-blue-700 disabled:opacity-50">
               Submit
             </button>
           </form>

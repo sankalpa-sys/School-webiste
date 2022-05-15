@@ -7,7 +7,7 @@ function BottomFooter() {
             Copyright &copy; 2022
 
         </h1>
-        <p className='text-yellow-500'>Shree Kyamin Secondary School</p>
+        <p className='text-yellow-500'>Next School</p>
     </div>
   )
 }

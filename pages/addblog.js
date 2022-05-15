@@ -15,6 +15,7 @@ import axios from "axios";
 import Head from "next/head";
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/router";
+import toast, { Toaster } from "react-hot-toast";
 
 function Addblog() {
   const router = useRouter();
@@ -27,6 +28,7 @@ function Addblog() {
   const [img, setImg] = useState(null);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const loadingToast = toast.loading("Uploading...")
     if (img !== null) {
       const fileName = new Date().getTime() + img.name;
       const storage = getStorage(app);
@@ -57,7 +59,7 @@ function Addblog() {
           // Handle successful uploads on complete
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            axios.post("/api/blog", {title: title,email:session.user.email, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then((alert("Blog Added"))).then(()=>router.push('/blog')).catch((err)=>console.log(err))
+            axios.post("/api/blog", {title: title,email:session.user.email, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then(toast.success("Blog Added.", {id:loadingToast})).then(()=>router.push('/blog')).catch((err)=>console.log(err)).catch(toast.error("Error!", {id:loadingToast}))
           });
         }
       );
@@ -86,6 +88,7 @@ function Addblog() {
         />
        
       </Head>
+      <Toaster position="top-center" reverseOrder={false} />
       <Header />
       <Navbar />
       <div

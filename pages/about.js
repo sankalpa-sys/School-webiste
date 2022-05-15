@@ -39,7 +39,7 @@ function About() {
             Introduction{" "}
           </h2>
           <p className="lead text-sm text-justify md:w-full md:text-base w-screen px-8 mt-3  text-gray-600">
-            Kyamin secondary School is a co-ed Nepali medium school from PG to
+            Next School is a co-ed Nepali medium school from PG to
             secondary level. The school was established in the year 1996 AD with
             the purpose of enhancing holistic development of students in a
             genial environment through innovative methodology. The school is
@@ -100,14 +100,14 @@ function About() {
             MISSION & VISION{" "}
           </h2>
           <p className="lead text-sm text-justify md:w-full md:text-base w-screen px-8 mt-3  text-gray-600">
-            Babylon National School is a place of education excellence where
+            Next School is a place of education excellence where
             high standards of learning are set and achievements and strengths of
             the learners are celebrated, where students are well equipped to
             meet the challenges in life and an individual student’s potential is
             maximized to help them pursue their dream.
             <br />
             <br />
-            BNS strives to offer a well balanced education that encourages high
+            NS strives to offer a well balanced education that encourages high
             expectations for success among the learners by offering creative,
             safe and supportive environment. This is the school where
             individual’s potentials are nurtured and celebrated to the optimum

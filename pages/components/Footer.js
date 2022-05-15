@@ -15,7 +15,7 @@ function Footer() {
           <Image src="/kyamin.png" layout="fill"  className=" rounded-xl" alt="" />
        </div>
         <p className="w-[90%] md:w-96  text-sm">
-          Kyamin Higher Secondary School is a place of education excellence
+          Next School is a place of education excellence
           where high standards of learning are set and achievements and
           strengths of the learners are celebrated, where students are well
           equipped to meet the challenges in life and an individual student’s
