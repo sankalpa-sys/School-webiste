@@ -23,6 +23,15 @@ const handler  =  async(req, res) => {
               res.status(400).send(err)
           }
       }
+
+      else{
+          try{
+              const updatedBlog = await Blog.findByIdAndUpdate(pid, req.body, {new: true});
+                res.status(200).send(updatedBlog);
+         }catch(err){
+              res.status(400).send(err)
+          }
+      }
 }
 
 export default handler

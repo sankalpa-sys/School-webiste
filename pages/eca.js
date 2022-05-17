@@ -39,7 +39,7 @@ function Eca() {
       <Header />
       <Navbar />
       <div
-        className="md:h-[500px] h-[500px] bg-fixed w-full  bg-center bg-no-repeat bg-cover space-y-8 text-gray-300 flex flex-col justify-center items-center"
+        className="md:h-[500px] h-[500px] bg-fixed w-full bg-center bg-no-repeat bg-cover space-y-8 text-gray-300 flex flex-col justify-center items-center"
         style={{
           backgroundImage:
             'url("https://images.pexels.com/photos/1231365/pexels-photo-1231365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',

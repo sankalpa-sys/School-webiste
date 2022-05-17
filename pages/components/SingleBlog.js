@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import moment from "moment";
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import toast from "react-hot-toast";
+
 
 function SingleBlog({
   id,
@@ -11,36 +13,77 @@ function SingleBlog({
   content,
   thumbnail,
   author,
+  grade,
   createdAt,
   runUseEffect,
   setrunUseEffect,
   email,
+  setdisplay,
+  display,
+  getId,
+  post
 }) {
   const { data: session } = useSession();
   const router = useRouter();
-  
+
+
+
+
   const handleReadMoreClick = (id) => {
     router.push(`/readblog/${id}`);
   };
-  const handleEditClick = () => {
+   const  handleEditClick = (id, author,post,grade,title,content) => {
+    setdisplay("inline")
+    getId(id,author,post,grade,title,content)
 
+
+   
   };
 
-  const handleDeleteClick = async (id) => {
+
+
+
+  const handleDeleteButtonClick = (id) => {
+
+     toast(
+      (t) => (
+        <span className="flex items-center space-x-2 select-none">
+         
+          <p className=" font-bold  font-mono text-sm text-left">Are you sure?</p>
+          <button className=" rounded-sm bg-red-600  shadow-md hover:scale-105 shadow-red-600/80 border-red-600 px-3 py-2  transition-all text-white " onClick={()=>confirmDeleteClick(id,t.id)}>Delete</button>
+          <button onClick={()=>toast.dismiss(t.id)} className=" bg-gray-900 border-white rounded-sm  px-3 py-2 transition-all text-white shadow-md hover:scale-105   ">Cancel</button>
+        </span>
+      ), {duration: Infinity, id: "delete-toast"},
+      
+    );
+  }
+   const confirmDeleteClick = async (id,toastID) => {
+     toast.dismiss(toastID)
+    const loadingtoast = toast.loading("Loading...");
     try {
+
       await axios.delete(`/api/singleblog/${id}`);
+      toast.success("Blog Deleted Successfully", { id: loadingtoast }, {duration: 3000});
       setrunUseEffect(runUseEffect + 1);
-    } catch (error) {}
+    } catch (error) {
+      toast.error("Error Deleting Blog", { id: loadingtoast });
+    }
   };
+
+
+
+  
+  
   return (
 
     
     <main className=" font-Roboto shadow-xl rounded-lg ">
-        
-      <div className="w-full ">
+     
+      <div className={display==="hidden"?"w-full ": "w-full opacity-40"}>
         <Image
+        
           src={thumbnail}
-          className={"rounded-t-lg"}
+          className={"rounded-t-lg object-cover object-top"}
           height={70}
           width={100}
           layout="responsive"
@@ -48,7 +91,7 @@ function SingleBlog({
         />
       </div>
 
-      <section className="px-4 flex space-y-3  flex-col py-8 border-r border-b border-l rounded-b-lg">
+      <section className={display === "hidden"?"px-4 flex space-y-3  flex-col py-8 border-r border-b border-l rounded-b-lg bg-gray-100":"px-4 flex space-y-3  flex-col py-8 border-r border-b border-l rounded-b-lg bg-gray-100 opacity-40"}>
         <h1 className="text-xl text-gray-700 font-semibold first-letter:uppercase">
           {title}
         </h1>
@@ -76,13 +119,13 @@ function SingleBlog({
               session.user.email === email) && (
               <div className="flex items-center space-x-3">
                 <button
-                  onClick={() => handleEditClick(id)}
+                  onClick={() => handleEditClick(id,author,post,grade,title,content)}
                   className="self-start bg-blue-500 text-white px-3 py-2 text-sm rounded-md hover:bg-blue-600 transition-colors "
                 >
                   Edit
                 </button>
                 <button
-                  onClick={() => handleDeleteClick(id)}
+                  onClick={() => handleDeleteButtonClick(id)}
                   className="self-start bg-red-500 text-white px-3 py-2 text-sm rounded-md hover:bg-red-600 transition-colors "
                 >
                   Delete

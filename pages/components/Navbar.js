@@ -20,7 +20,7 @@ function Navbar() {
 
   return (
     <>
-      <main className="w-screen h-16 select-none bg-black text-white flex items-center justify-between pl-2 pr-2 md:pr-8 shadow-md">
+      <main className="w-screen  h-16 select-none bg-black text-white flex items-center justify-between pl-2 pr-2 md:pr-8 shadow-md">
         <Image
           src="https://4.bp.blogspot.com/-xQiVfurjEqg/WzOeOJ4aTdI/AAAAAAAAol0/72y9ICam56shTYXRwaUL7vhqqbTDAM80ACLcBGAs/s1600/Flag_of_Nepal.gif"
           className="h-16 w-16 p-1 rounded-lg"

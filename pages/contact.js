@@ -9,7 +9,7 @@ import ReserveSeat from "./components/ReserveSeat";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 function Contact() {
   const router = useRouter();

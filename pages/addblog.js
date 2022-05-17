@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -26,6 +26,13 @@ function Addblog() {
   const [post, setPost] = useState("teacher")
   const [grade, setGrade] = useState(null)
   const [img, setImg] = useState(null);
+
+  useEffect(() => {
+    if(!session){
+      router.push("/blog")
+    }
+  }, [session])
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const loadingToast = toast.loading("Uploading...")
@@ -59,12 +66,12 @@ function Addblog() {
           // Handle successful uploads on complete
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            axios.post("/api/blog", {title: title,email:session.user.email, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then(toast.success("Blog Added.", {id:loadingToast})).then(()=>router.push('/blog')).catch((err)=>console.log(err)).catch(toast.error("Error!", {id:loadingToast}))
+            axios.post("/api/blog", {title: title,email:session.user.email, content: content,author: name, post: post, grade: grade, thumbnail:downloadURL}).then(toast.success("Blog Added.", {id:loadingToast})).then(()=>router.push('/blog')).catch((err)=>console.log(err))
           });
         }
       );
     } else {
-      console.log("no image");
+      toast.error("Please select a thumbnail.", {id:loadingToast})
     }
 
   };
@@ -115,6 +122,7 @@ function Addblog() {
             type="file"
             id="photo"
             name="photo"
+
             onChange={(e) => setImg(e.target.files[0])}
             className="self-start file:cursor-pointer mb-4 block w-full text-sm text-gray-500
             file:mr-4 file:py-2 file:px-4
@@ -153,12 +161,12 @@ function Addblog() {
             onChange={(e) => setTitle(e.target.value)}
           />
           <textarea
-            className="w-full mt-4 border-b text-gray-600 border-slate-300 text-sm outline-none flex justify-start font-Lobster  px-2 md:px-2 scrollbar-hide rounded-xl h-auto"
+            className="w-full mt-4 border-b text-gray-600 border-slate-300 text-sm outline-none flex justify-start font-Lobster  px-2 md:px-4 scrollbar-hide rounded-xl h-auto"
             name=""
             id=""
             cols="30"
             rows={10}
-            placeholder=" Your content here..."
+            placeholder=" Share your thoughts..."
             value={content}
             onChange={(e) => setContent(e.target.value)}
           ></textarea>
