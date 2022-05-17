@@ -77,11 +77,12 @@ function SingleBlog({
   return (
 
     
-    <main className=" font-Roboto shadow-xl rounded-lg ">
+    <main className=" font-Roboto shadow-xl rounded-lg  ">
      
       <div className={display==="hidden"?"w-full ": "w-full opacity-40"}>
         <Image
-        
+
+          priority
           src={thumbnail}
           className={"rounded-t-lg object-cover object-top"}
           height={70}
@@ -91,7 +92,7 @@ function SingleBlog({
         />
       </div>
 
-      <section className={display === "hidden"?"px-4 flex space-y-3  flex-col py-8 border-r border-b border-l rounded-b-lg bg-gray-100":"px-4 flex space-y-3  flex-col py-8 border-r border-b border-l rounded-b-lg bg-gray-100 opacity-40"}>
+      <section className={display === "hidden"?"px-4  flex space-y-3  flex-col py-8 border-r  border-l rounded-b-lg bg-gray-100":"px-4 flex space-y-3  flex-col py-8 border-r border-b border-l rounded-b-lg bg-gray-100 opacity-40"}>
         <h1 className="text-xl text-gray-700 font-semibold first-letter:uppercase">
           {title}
         </h1>
@@ -102,8 +103,8 @@ function SingleBlog({
           <p className="text-gray-600 text-sm font-Cursive">by</p>
           <p className="text-blue-700 text-sm font-Cursive">{author}</p>
         </div>
-        <p className="text-sm text-gray-600  first-letter:uppercase first-letter:text-yellow-600 first-letter:font-bold first-letter:text-xl">
-          {content ? content.slice(0, 150) + " " + "..." : ""}
+        <p className="text-sm text-gray-600  truncate first-letter:uppercase first-letter:text-yellow-600 first-letter:font-bold first-letter:text-xl">
+          {content}
         </p>
 
         <section className="flex items-center justify-between">

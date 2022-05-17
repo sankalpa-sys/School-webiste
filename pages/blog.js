@@ -83,6 +83,8 @@ function Blog() {
 
   }
 
+  console.log(post);
+
   return (
     <main className="bg-gray-100">
       <Head>
@@ -108,7 +110,7 @@ function Blog() {
 
 
     {/* Modal */}
-      <div className={`h-auto ${display} md:w-[500px] w-[300px] bg-gray-200 fixed z-50 top-32 md:top-12 border py-3 left-[50px]  md:left-[500px] shadow-lg `}>
+      <div className={`h-auto ${display} md:w-[500px] w-[350px] bg-gray-200 fixed z-50 top-32 md:top-12 border py-3 left-[20px]  md:left-[500px] shadow-lg `}>
         <div className="flex  items-center justify-between px-3 py-2 my-2">
           <h1 className="text-xl font-mono text-gray-600">Edit Blog</h1>
           <XIcon onClick={()=>setdisplay("hidden")} className={`h-6 w-6 text-gray-600 cursor-pointer `}/>
@@ -127,14 +129,14 @@ function Blog() {
             file:bg-violet-50 file:text-violet-700
             hover:file:bg-violet-100 cursor-pointer "
           />
-            <input  value= {author} onChange={e=>setAuthor(e.target.value)} name="name" type="text" placeholder="Your name" className="form-item placeholder:text-gray-600 bg-transparent border border-gray-600" />
-           <select value={post} onChange={e=>setPost(e.target.value)}  name="post" id="post" className="form-item placeholder:text-gray-600 bg-transparent border border-gray-600">
+            <input  value= {author} onChange={e=>setAuthor(e.target.value)} name="name" type="text" placeholder="Your name" className="form-item shadow-md placeholder:text-gray-600 bg-transparent border border-gray-300" />
+           <select value={post} onChange={e=>setPost(e.target.value)}  name="post" id="post" className="form-item placeholder:text-gray-600 shadow-md bg-transparent border border-gray-300">
              <option value="teacher">Teacher</option>
              <option value="student">Student</option>
            </select>
-           <input value={grade} onChange={e=>setGrade(e.target.value)} name="grade" type="number" min={1} max={12} placeholder="Your Grade" className="form-item placeholder:text-gray-600 bg-transparent border border-gray-600" />
-           <input value={title} onChange={e=>setTitle(e.target.value)} name="title" type="text" placeholder="Title of your blog" className="form-item placeholder:text-gray-600 bg-transparent border border-gray-600" />
-           <textarea value={content} onChange={e=>setContent(e.target.value)} className="text-sm bg-transparent border border-gray-600 placeholder:text-gray-600 font-light px-3 font-Roboto outline-none text-gray-600" name="content" id="content" cols="50" rows="5" placeholder="Your content here"></textarea>
+           <input value={grade} disabled={post==="teacher"} onChange={e=>setGrade(e.target.value)} name="grade" type="number" min={1} max={12} placeholder="Your Grade" className="form-item shadow-md placeholder:text-gray-600 disabled:cursor-not-allowed bg-transparent border border-gray-300" />
+           <input value={title} onChange={e=>setTitle(e.target.value)} name="title" type="text" placeholder="Title of your blog" className="form-item shadow-md placeholder:text-gray-600 bg-transparent border border-gray-300" />
+           <textarea value={content} onChange={e=>setContent(e.target.value)} className="text-sm bg-transparent border border-gray-300 shadow-md placeholder:text-gray-600 font-light px-3 font-Roboto outline-none text-gray-600" name="content" id="content" cols="50" rows="5" placeholder="Your content here"></textarea>
            <button onClick={handleEditButtonClick} className="bg-red-600 py-2 text-gray-100 hover:bg-red-700 transition-all active:scale-90 duration-300 ease-in " type="submit">Edit</button>
 
           </div>

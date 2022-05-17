@@ -6,7 +6,7 @@ function PricipalMessage() {
     <main className=" md:w-[85%] px-3 ml-auto h-auto  my-24 flex md:flex-row flex-col md:space-x-3 space-y-6">
       <section className="md:w-[40%] w-full h-full flex flex-col space-y-3 md:px-4 px-2 ">
         <div className="w-full relative h-96">
-             <Image src="https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"  className="w-full" layout="fill" alt="" />
+             <Image priority src="https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"  className="w-full" layout="fill" alt="" />
         </div>
         <p className=" font-Roboto mt-4 first-letter:text-yellow-600 first-letter:font-bold first-letter:text-2xl">
           If there is no struggle, there is no progress. The true spirit of the

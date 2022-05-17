@@ -71,7 +71,7 @@ function Addblog() {
         }
       );
     } else {
-      toast.error("Please select a thumbnail.", {id:loadingToast})
+      toast.error("Please add all the fields.", {id:loadingToast})
     }
 
   };
@@ -138,7 +138,7 @@ function Addblog() {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <select className="w-full h-auto outline-none mx-2 md:mx-4   text-sm text-zinc-800 border-b border-slate-300  p-1" onChange={(e) => setPost(e.target.value)} name="post" id="post">
+          <select value={post} className="w-full h-auto outline-none mx-2 md:mx-4   text-sm text-zinc-800 border-b border-slate-300  p-1" onChange={(e) => setPost(e.target.value)} name="post" id="post">
             <option value="teacher">Teacher</option>
             <option value="student">Student</option>
           </select>
@@ -146,8 +146,9 @@ function Addblog() {
           <input
             type="number"
             placeholder="Your grade"
-            className="w-full h-auto outline-none mx-2 md:mx-4   text-sm text-zinc-800 border-b border-slate-300  p-1"
-            value={grade}
+            className="w-full disabled:cursor-not-allowed  h-auto outline-none mx-2 md:mx-4   text-sm text-zinc-800 border-b border-slate-300  p-1"
+            value={post === "student"?grade:""}
+            disabled={post === "teacher"}
             max={12}
             min={1}
             onChange={(e) => setGrade(e.target.value)}
