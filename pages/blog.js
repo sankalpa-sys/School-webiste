@@ -11,7 +11,7 @@ import axios from "axios";
 import { RefreshIcon, XIcon } from "@heroicons/react/outline";
 import  toast, { Toaster } from "react-hot-toast";
 import { useSession,signIn } from "next-auth/react";
-import { SpinnerCircularFixed } from 'spinners-react';
+import { SpinnerDiamond } from 'spinners-react';
 
 
 
@@ -191,7 +191,7 @@ function Blog() {
         </section>
       ) : (
         <div className="flex flex-col justify-center items-center h-[400px] w-screen bg-gray-100">
-          <SpinnerCircularFixed color="red" size={50} thickness={200} />
+          <SpinnerDiamond color="red" thickness={200} />
         </div>
       )}
 

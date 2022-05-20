@@ -7,6 +7,7 @@ import BottomFooter from './components/BottomFooter'
 import Profile from './components/Profile'
 import Head from 'next/head'
 import useSWR from 'swr'
+import { SpinnerDiamond } from 'spinners-react';
 
 
 
@@ -21,7 +22,7 @@ function Staff() {
   const { data, error } = useSWR('/api/staffinfo', fetcher);
   
   if (error) return <div className="h-screen w-screen flex justify-center items-center"><h1 className="text-red-600 font-bold text-2xl animate-bounce">Failed to Load</h1></div>
-  if (!data) return <div className="h-screen w-screen flex justify-center items-center"><h1 className="text-blue-700 font-bold text-2xl animate-bounce">Loading...</h1></div>
+  if (!data) return <div className="h-screen w-screen flex justify-center items-center"><SpinnerDiamond color="red" thickness={200} /></div>
     
   return (
     <main className=''>

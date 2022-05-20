@@ -88,7 +88,7 @@ function Gallery() {
       </section>
 
       {view && (
-        <div className="md:h-3/4 h-1/2  md:w-1/2 w-[80%] mx-auto fixed md:top-32 top-48 md:left-72 left-10 shadow-xl rounded-lg ">
+        <div className="md:h-3/4 h-1/2  md:w-1/2 w-[80%] mx-auto fixed md:top-32 top-48 md:left-72 left-10 z-50 shadow-xl rounded-lg ">
         <Image src={viewingImage} className="w-full h-full rounded-lg" alt="" layout="fill" />
         <XIcon onClick={()=>setView(false)} className="h-8 w-8 absolute top-0 text-blue-100 right-0 m-2 cursor-pointer"/>
       </div>

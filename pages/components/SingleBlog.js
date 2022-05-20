@@ -5,6 +5,8 @@ import moment from "moment";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import toast from "react-hot-toast";
+import { PencilAltIcon, TrashIcon,EyeIcon  } from "@heroicons/react/solid";
+
 
 
 function SingleBlog({
@@ -107,30 +109,28 @@ function SingleBlog({
           {content}
         </p>
 
-        <section className="flex items-center justify-between">
-          <button
-            onClick={() => handleReadMoreClick(id)}
-            className="self-start bg-green-500 text-white px-3 py-2 text-sm rounded-md hover:bg-green-600 transition-colors "
-          >
-            Read More
-          </button>
+        <section className="flex items-center justify-between h-16">
+         <div onClick={() => handleReadMoreClick(id)} className="flex cursor-pointer flex-col justify-center items-center group">
+         <EyeIcon className="h-8 w-8 text-teal-600 group-hover:animate-bounce transition-transform duration-300 active:scale-90"/>
+        <p className="text-teal-600 text-xs group-hover:inline-flex hidden">Read</p>
+         </div>
 
           {session &&
             (session.user.email === "sankalpa115@gmail.com" ||
               session.user.email === email) && (
               <div className="flex items-center space-x-3">
-                <button
-                  onClick={() => handleEditClick(id,author,post,grade,title,content)}
-                  className="self-start bg-blue-500 text-white px-3 py-2 text-sm rounded-md hover:bg-blue-600 transition-colors "
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => handleDeleteButtonClick(id)}
-                  className="self-start bg-red-500 text-white px-3 py-2 text-sm rounded-md hover:bg-red-600 transition-colors "
-                >
-                  Delete
-                </button>
+                
+                <div onClick={() => handleEditClick(id,author,post,grade,title,content)} className="flex flex-col justify-center items-center group cursor-pointer">
+                <PencilAltIcon  className="h-8 w-8 text-blue-600 cursor-pointer  group-hover:animate-bounce transition-transform duration-300 active:scale-90"/>
+                <p className=" text-xs group-hover:inline-flex hidden text-blue-600  ">Edit</p>
+                </div>
+                <div onClick={() => handleDeleteButtonClick(id)} className="flex cursor-pointer flex-col justify-center items-center group">
+                <TrashIcon   className="h-8 w-8 text-red-600  cursor-pointer group-hover:animate-bounce transition-transform duration-300 active:scale-90"/>
+                <p className="text-red-600 text-xs group-hover:inline-flex hidden ">Del</p>
+                </div>
+                
+                
+                
               </div>
             )}
         </section>
