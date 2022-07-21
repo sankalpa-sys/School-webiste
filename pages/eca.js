@@ -10,6 +10,7 @@ import Head from "next/head";
 import Image from "next/image";
 import useSWR from "swr";
 import { SpinnerDiamond } from 'spinners-react';
+import Fade from 'react-reveal/Fade';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -59,7 +60,8 @@ function Eca() {
 
       <section className="w-screen font-Roboto my-8">
         <div className="w-full flex flex-col items-center md:flex-row  md:space-x-8 md:px-32">
-          <div className="w-[80%] ml-2">
+         <Fade left>
+         <div className="w-[80%] ml-2">
             <h1 className="font-semibold text-xl text-gray-700 my-2 underline">
               Enhancing ECA
             </h1>
@@ -100,6 +102,7 @@ function Eca() {
               John Cena
             </h1>
           </div>
+         </Fade>
           <div className="h-72 w-72 md:h-96  md:w-96 relative shadow-lg rounded-sm">
             <Image
               src="https://images.pexels.com/photos/25758/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
+import { Fade } from 'react-reveal'
 
 function EcaCard({title, desc, pic}) {
   return (
-    <main className='md:w-[80%] w-full mx-auto h-auto   font-Roboto  rounded-lg shadow-lg'>
+    <Fade bottom>
+      <main className='md:w-[80%] w-full mx-auto h-auto   font-Roboto  rounded-lg shadow-lg'>
         <div className='w-full h-72 relative '>
                 <Image src={pic} layout="fill" className='w-full h-full rounded-t-lg' alt="" />
         </div>
@@ -13,6 +15,7 @@ function EcaCard({title, desc, pic}) {
             <p className='text-gray-600 text-sm md:text-base'>{desc} </p>
         </div>
     </main>
+    </Fade>
   )
 }
 

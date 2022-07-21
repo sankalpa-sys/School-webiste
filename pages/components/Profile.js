@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import { Fade } from "react-reveal";
 
 function Profile({ name, post, pic }) {
   const [followers, setfollowers] = useState(10);
@@ -11,7 +12,8 @@ function Profile({ name, post, pic }) {
     sethover("hidden");
   };
   return (
-    <main className=" h-[400px] w-full">
+    <Fade bottom>
+      <main className=" h-[400px] w-full">
       <section
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -77,6 +79,7 @@ function Profile({ name, post, pic }) {
         </div>
       </section>
     </main>
+    </Fade>
   );
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import Slide from 'react-reveal/Slide';
 
 function BasicInfo() {
   return (
-    <main className=' md:w-[80vw]  mx-auto h-auto flex flex-wrap my-8 shadow-lg px-4 rounded-lg'>
+
+    <Slide left>
+          <main className=' md:w-[80vw]  mx-auto h-auto flex flex-wrap my-8 shadow-lg px-4 rounded-lg'>
         <div className='w-full flex md:flex-row flex-col md:space-x-10 space-y-8 md:space-y-0 my-6'>
         <section className='bg-blue-600  h-64 w-full md:w-[50%] flex space-y-4  flex-col justify-center rounded-xl items-center font-Roboto text-white '>
             <h1 className='text-7xl font-bold'>984</h1>
@@ -26,6 +29,8 @@ function BasicInfo() {
         
         
     </main>
+        </Slide>
+    
   )
 }
 

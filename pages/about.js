@@ -9,6 +9,7 @@ import Head from 'next/head'
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+
 function About() {
   const router = useRouter()
   return (
@@ -33,7 +34,9 @@ function About() {
           ABOUT US
         </h1>
       </div>
+
       <div className="flex flex-col md:flex-row-reverse items-center w-screen space-y-2 my-8 px-8">
+        
         <div className="w-[90%] flex flex-col justify-center space-y-4 items-center px-24">
           <h2 className="featurette-heading text-bold w-60 ml-4 text-yellow-600 text-2xl">
             Introduction{" "}
@@ -53,6 +56,7 @@ function About() {
             the CDC, Nepal.
           </p>
         </div>
+       
         <div className="h-96 md:w-[40%] w-full relative">
           <Image
             src="https://images.pexels.com/photos/207756/pexels-photo-207756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -62,6 +66,7 @@ function About() {
           />
         </div>
       </div>
+      
       <hr />
       <div className="flex flex-col md:flex-row items-center w-screen space-y-2 my-8 px-8">
         <div className="w-[90%] flex flex-col justify-center space-y-4 items-center px-24">

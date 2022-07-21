@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import ReserveSeat from "./components/ReserveSeat";
 
 import useSWR from 'swr'
+import { Fade } from "react-reveal";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -82,7 +83,9 @@ function Gallery() {
       {/* Photos */}
       <section className={view? "screen grid grid-cols-2 md:grid-cols-3 my-4 gap-2 px-2 transition-all duration-300  opacity-30 ":"screen grid grid-cols-2 md:grid-cols-3 my-4 gap-2 px-2 transition-all duration-300 "}>
        {data.slice(starting,end).map((image)=>(
-          <Image onClick={()=>handleImageClick(image.img)} className={view?"cursor-pointer transition-opacity duration-300 opacity-30":"cursor-pointer hover:opacity-60 transition-opacity duration-300"} key={image.id} src={image.img} layout='responsive' alt="" height={50} width={50}/>
+          <Fade bottom>
+            <Image onClick={()=>handleImageClick(image.img)} className={view?"cursor-pointer transition-opacity duration-300 opacity-30":"cursor-pointer hover:opacity-60 transition-opacity duration-300"} key={image.id} src={image.img} layout='responsive' alt="" height={50} width={50}/>
+          </Fade>
        ))}
         
       </section>
